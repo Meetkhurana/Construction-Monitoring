@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Site Progress Dashboard</title>
+    
+    <link rel="stylesheet" href="projectProgress.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Project Progress</h1>
+        
+    </header>
+    <br>
+    <br>
+<div class="labell">Completion Rate <span class="gapp"></span>  Project duration </div>
+  <div class="meet">
+    <div class="pie animate no-round" style="--p:80;--c:orange ;" position:absolute;>
+         <span style="color:green">73%</span>
+    </div>
+    <span class="gap"></span>
+    
+    <div class="pie animate"` style="--p:90;--c:lightgreen"><span style="color:green">1332 days</span>
+    </div></div>
+    <br>
+    
+    
+    <table class="area-chart">
+        
+        <tbody>
+            
+          <tr>
+            <td style="--start:0.1; --end:0.5;"> 50 </td>
+            <td style="--start:0.0; --end:0.2;"> 20 </td>
+            <td style="--start:0.2; --end:0.4;"> 40 </td>
+            <th class="th"><span class="check"></span><span class="txt">Planned</span> <br><span class = 'checkk'></span> <span class="wrd">Achieved</span></th>  
+
+          </tr>
+          <tr>
+           
+            <td style="--start:0.5; --end:0.7;"> 60 </td>
+            <td style="--start:0.2; --end:0.5;"> 50 </td>
+            <td style="--start:0.4; --end:0.1;"> 10 </td>
+           
+          </tr>
+          <tr>
+           
+            <td style="--start:0.7; --end:0.4;"> 40 </td>
+            <td style="--start:0.5; --end:0.3;"> 30 </td>
+            <td style="--start:0.1; --end:0.2;"> 20 </td>
+            <tH><span class="budd">Budget Variance</span></tH>
+          </tr>
+        </tbody>
+      </table>
+      
+    <div class="container">
+        <section class="status">
+            <h2>Project Status</h2>
+            <canvas id="progressChart"></canvas>
+        </section>
+        <section class="metrics">
+            
+            <div class="metric">
+                <h3>Completion Percentage</h3>
+                <p id="completionPercentage">70%</p>
+            </div>
+            <div class="metric">
+                <h3>Remaining Tasks</h3>
+                <p id="remainingTasks">15</p>
+            </div>
+            <div class="metric">
+                <h3>Days Behind Schedule</h3>
+                <p id="daysBehindSchedule">5</p>
+            </div>
+        </section>
+        <centre>
+        <section class="timeline">
+            <h2>Timeline</h2>
+            <canvas id="timelineChart" style="width: 500px; height: 500px;"></canvas>
+
+
+        </section>
+        </centre>
+    </div>
+    <script src="projectProgress.js"></script>
+    
+   
+</body>
+</html>

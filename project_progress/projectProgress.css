@@ -1,0 +1,280 @@
+
+
+body {
+    font-family: Sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(bg.jpg);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+.budd{
+  margin-left:3px;
+  font-size:18px;
+  padding-top:5%;
+}
+section {
+    margin-bottom: 30px;
+}
+
+.status {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius:20px;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.metric {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.timeline {
+    background-color: #f2f2f2;
+    padding: 20px;
+    padding-bottom: 0px;
+    height: 600px;
+    width: 490px;
+    margin-left: 18%;
+    
+}
+
+
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  .pie {
+    --p:20;
+    --b:22px;
+    --c:darkred;
+    --w:230px;
+   
+    
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+  }
+  .pie:before,
+  .pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+  .pie:before {
+    inset:0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animate {
+    animation:p 1s .5s both;
+  }
+  .no-round:before {
+    background-size:0 0,auto;
+  }
+  .no-round:after {
+    content:none;
+  }
+  @keyframes p {
+    from{--p:0}
+  }
+  
+  body {
+    background:lightgrey;
+  }
+  
+.gap{
+    margin-left: 50px;
+}
+.gapp{
+  margin-left:60px;
+}
+.meet{
+    height: 250px;
+    width: 535px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  
+    backdrop-filter: blur(15px);
+    margin-left: 54%;
+    border-radius: 20px;
+    
+   
+  }
+  
+.card {
+        height:300px;
+        width:300px;
+        margin-right: 100px;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+        
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      
+        backdrop-filter: blur(15px);
+}
+
+ .labell{
+  margin-left: 54%;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  height: 35px;
+  width: 520px;
+  background-color: pink;
+  border-radius:20px;
+ }   
+ 
+ /**
+ * Article: https://css-tricks.com/how-to-make-an-area-chart-with-css/
+ * More info: https://ChartsCSS.org/
+ */
+
+.area-chart {
+  /* Reset */
+  margin-top: -21%;
+
+  margin-left:15%;
+  padding: 0;
+  border: 0;
+  padding-left: 3px;
+  padding-right: 3px;
+  
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+
+
+  /* Dimensions */
+  width: 100%;
+  max-width: var(--chart-width, 500px);
+  height: var(--chart-height, 250px);
+}
+.area-chart tbody {
+  width: 100%;
+  height: var(--chart-height, 300px);
+
+  /* Layout */
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-direction: row;
+}
+.area-chart tr {
+  position: relative;
+
+  /* Even size items */
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;  
+}
+.area-chart td {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Color */
+  background: var(--color, rgba(240, 50, 50, 0.75));
+  clip-path: polygon(
+    0% calc(100% * (1 - var(--start))),
+    100% calc(100% * (1 - var(--end))),
+    100% 100%,
+    0% 100%
+  );
+}
+.area-chart td:nth-of-type(1) {
+  --color: rgba(240, 50, 50, 0.75);
+}
+.area-chart td:nth-of-type(2) {
+  --color: rgba(255, 180, 50, 0.75);
+}
+.area-chart td:nth-of-type(3) {
+  --color: rgba(255, 220, 90, 0.75);
+}
+/* Add more styles as needed */
+.check{
+  height: 10px;
+  width: 10px;
+  background-color:rgba(240, 50, 50, 0.75);
+  position:absolute ;
+  margin-left: 0%;
+  margin-top: 3px;
+  
+}
+.th{
+  text-indent: 5px;
+}
+.checkk{
+  height: 10px;
+  width: 10px;
+  background-color:rgba(255, 180, 50, 0.75);
+  position:absolute ;
+  margin-left: 3%;
+  margin-top: 3px;
+  
+}
+.txt{
+  margin-left:20%;
+}
+.wrd{
+  margin-left: 28%;
+}

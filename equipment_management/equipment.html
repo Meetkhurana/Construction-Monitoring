@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<title>EQUIPMENT MANAGEMENT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+  
+body {
+    background: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* Light text color */
+    margin: 0;
+}
+
+
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+.glass {
+	 max-width: 300px;
+	 min-height: 200px;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: space-between;
+	 max-width: 500px;
+	 height: 300px;
+   margin-left: 80px;
+	 padding: 35px;
+	 border: 1px solid rgba(255, 255, 255, .25);
+	 border-radius: 20px;
+	 background-color: rgba(255, 255, 255, 0.45);
+	 box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+	 backdrop-filter: blur(15px);
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(topimg.jpg);
+  min-height: 90%;
+}
+
+.menu {
+  display:none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  gap: 20px;
+
+  > div {
+    flex: 0 0 300px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url(pic01.jpg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url(pic02.jpg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url(pic03.jpg)
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url(pic04.jpg)
+        no-repeat 50% / cover;
+    }
+
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 350px;
+      box-shadow: 1px 3px 15px #7645d8;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
+.contained {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 70vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+ 
+
+</style>
+<body>
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-min" id="home">
+  
+  <div class="w3-display-middle w3-center"> <strong>
+    <span class="w3-text-white" style="font-size:50px ">EQUIPMENT MANAGEMENT</span>
+  </div>
+ 
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div style="background:
+url(https://source.unsplash.com/E8Ufcyxz514/2400x1823)
+center / cover no-repeat fixed;"> 
+  
+<!-- Menu Container -->
+<div class="w3-container "  id="menu">
+  <div class="w3-content " style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding w3-pale-blue">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink w3-grey">CONSTRUCTION EQUIPNENTS</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink w3-grey">SAFETY GUARDS</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card w3-pale-green">
+      <h5>Excavator:</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: EC220DL
+      Manufacturer: Volvo
+      Serial Number: 1234567890
+      </pre></p><br>
+    
+      <h5>Bulldozer:</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: D6T
+      Manufacturer: Caterpillar
+      Serial Number: 0987654321
+      </pre>
+      </p><br>
+    
+      <h5>crane</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: Tadano TR-250M-4
+      Manufacturer: Tadano
+      Serial Number: 5678901234
+        </pre>
+      </p><br>
+    
+      <h5>concrete mixer</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: CM-125
+      Manufacturer: Sany
+      Serial Number: 4567890123
+      </pre>
+      </p><br>
+    
+      <h5>Dump Truck</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: 770G
+      Manufacturer: John Deere
+      Serial Number: 3456789012
+      </pre>
+      </p>
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card w3-pale-green">
+      <h5>Hard Hats</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: V-Gard
+      Manufacturer: MSA Safety
+      Serial Number: N/A (Hard hats typically do not have serial numbers)
+      Inspection Records: Keep track of regular inspections for signs of damage or wear.
+      </pre>
+      </p><br>
+    
+      <h5>Safety harnesses</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: Titan Harness
+      Manufacturer: 3M Fall Protection
+      Serial Number: 7890123456
+      Inspection Logs: Document inspections for wear, tear, and functionality.
+      </pre>
+      </p><br>
+    
+      <h5>High Visibility Vests:</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: Reflective Safety Vest
+      Manufacturer: Portwest
+      Serial Number: N/A
+      Inventory Management: Track the number of vests available for workers on-site.
+      </pre>
+      </p><br>
+    
+      <h5>Safety Goggles:</h5>
+      <p class="w3-text-orange">
+      <pre>
+      Model: Anti-Fog Safety Goggles
+      Manufacturer: Pyramex Safety Products
+      Serial Number: 1234567890
+      Cleaning Records: Keep track of cleaning frequency to prevent fogging
+      and maintain visibility.
+      </pre>
+      </p><br>
+        </div>  
+    
+  </div>
+</div>
+
+
+<div class="contained">
+  <div class="box">
+    <img src="jcb03.jpg">
+    <span class="w3-light-grey">Bull Dozer</span>
+  </div>
+  <div class="box">
+    <img src="bdijcb.jpg">
+    <span class="w3-light-grey">Tower Crane</span>
+  </div>
+  <div class="box">
+    <img src="digger.jpg">
+    <span class="w3-light-grey">Crane</span>
+  </div>
+  <div class="box">
+    <img src="grinding.jpg">
+    <span class="w3-light-grey">Grinding</span>
+  </div>
+</div>
+
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
